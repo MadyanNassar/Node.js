@@ -11,3 +11,8 @@
 let numbers = [ "12", "846", "2", "1236" ];
 
 // YOUR CODE GOES HERE
+const padLeft = require('left-pad');
+
+numbers.forEach((item) => {
+  console.log(padLeft(item, 5, '_'));
+}); 
