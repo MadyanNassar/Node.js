@@ -5,4 +5,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "cSpell.words": [
+    "exphbs",
+    "hack",
+    "temperature",
+    "your"
+  ],
 }
