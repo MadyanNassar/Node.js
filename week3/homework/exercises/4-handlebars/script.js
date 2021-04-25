@@ -9,21 +9,9 @@
  * Hints:
  * - Check the handlebars npm page for examples and documentation
  */
+ const Handlebars = require("handlebars");
 
-
-function drawCard() {
-  // YOUR CODE GOES IN HERE
-}
-
-drawCard();
-
-/**
- * Given an array, return an element from it chosen at random
- */
-function getRandomElement(array) {
-  // YOUR CODE GOES IN HERE
-}
-
+ 
 const subjects = [
   'shark',
   'popcorn',
@@ -43,3 +31,31 @@ const punchlines = [
   'achieve world piece',
   'help people learn programing',
 ];
+
+
+
+function drawCard() {
+  // YOUR CODE GOES IN HERE
+  const cardData = {
+    subject: getRandomElement(subjects),
+    punchline: getRandomElement(punchlines),
+  };
+  return cardData;
+}
+
+drawCard();
+
+/**
+ * Given an array, return an element from it chosen at random
+ */
+function getRandomElement(array) {
+  // YOUR CODE GOES IN HERE
+  const randomElement = Math.floor(Math.random(array) * array.length);
+  return array[randomElement];
+}
+
+
+
+const card = `{{subject}} is great to {{punchline}}`;
+const template = Handlebars.compile(card);
+console.log(template(drawCard(subjects, punchlines)));
